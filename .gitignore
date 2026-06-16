@@ -1,0 +1,43 @@
+# Node / frontend
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+backend/target/
+frontend/dist/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+
+# Logs and env
+*.log
+.env
+
+# H2 database files (persisted DB)
+backend/data/
+backend/data/*.mv.db
+backend/data/*.trace.db
+
+# OS
+.DS_Store
+# Java
+*.class
+target/
+
+# Maven
+**/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Node
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

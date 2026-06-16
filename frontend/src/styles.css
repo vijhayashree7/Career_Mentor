@@ -1,0 +1,176 @@
+:root {
+    --bg: #ffffff;
+    --paper: #ffffff;
+    --text: #000000;
+    --muted: #666666;
+    --elev: rgba(0, 0, 0, 0.06);
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Roboto, Arial, sans-serif;
+    color: var(--text);
+    /* default background for non-home pages: rembg image */
+    background: var(--bg) url('/rembg.jpg') center/cover no-repeat fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container basics */
+.MuiContainer-root {
+    position: relative;
+    z-index: 1;
+    padding: 24px;
+}
+
+/* Paper / cards use simple white with soft shadow */
+.MuiPaper-root {
+    background: var(--paper);
+    color: var(--text);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 24px var(--elev);
+    transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+
+.MuiPaper-root:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px var(--elev);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--text);
+}
+
+.MuiTypography-body1,
+.MuiTypography-body2 {
+    color: var(--muted);
+}
+
+/* Buttons - neutral */
+.MuiButton-contained {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    padding: 8px 14px;
+}
+
+.MuiButton-contained:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+/* Inputs - neutral outlines */
+.MuiOutlinedInput-root {
+    color: var(--text);
+}
+
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+/* Helper text */
+.MuiFormHelperText-root {
+    color: var(--muted);
+}
+
+/* Simple accents removed */
+.brand-accent {
+    display: none;
+}
+
+/* Hero / home simple layout */
+.hero-root {
+    background: var(--bg);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/bgimage.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    z-index: 0;
+    transform-origin: center center;
+    will-change: transform;
+    animation: kenburns 22s ease-in-out infinite alternate, bgFloat 12s ease-in-out infinite alternate;
+}
+
+@keyframes kenburns {
+    from {
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        transform: translateY(-3%) scale(1.06);
+    }
+}
+
+@keyframes bgFloat {
+    from {
+        background-position: 50% 45%;
+    }
+
+    to {
+        background-position: 50% 55%;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    /* slightly darker overlay for improved contrast */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-align: center;
+    padding: 36px 20px;
+    max-width: 960px;
+    text-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content .MuiButton-contained {
+    background: rgba(255, 255, 255, 0.95);
+    color: #000000;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.hero-content .MuiButton-outlined {
+    border-color: rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .MuiContainer-root {
+        padding: 14px;
+    }
+}
