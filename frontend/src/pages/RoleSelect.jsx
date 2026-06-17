@@ -30,6 +30,7 @@ export default function RoleSelect() {
 
                 <Button variant="contained" size="large" onClick={async () => {
                     if (role === 'Student') return navigate('/student-setup');
+                    if (role === 'College') return navigate('/college-setup');
                     await submit();
                 }} sx={{ mt: 1 }}>Continue</Button>
             </Paper>
