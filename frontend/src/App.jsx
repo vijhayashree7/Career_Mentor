@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import RoleSelect from './pages/RoleSelect';
 import StudentQuestionnaire from './pages/StudentQuestionnaire';
+import CollegeQuestionnaire from './pages/CollegeQuestionnaire';
 
 function App() {
     const location = useLocation();
@@ -26,6 +27,7 @@ function App() {
                         <Route path="/role-select" element={<RoleSelect />} />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/student-setup" element={<StudentQuestionnaire />} />
+                        <Route path="/college-setup" element={<CollegeQuestionnaire />} />
                         <Route path="/" element={<Home />} />
                     </Routes>
                 </Container>
